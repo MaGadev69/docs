@@ -3,8 +3,8 @@
 ## 🔄 **Gestión de Paquetes (APT)**
 | Comando | Descripción |
 |---------|-------------|
-| `sudo apt update` | Actualiza la lista de paquetes disponibles. |  
-| `sudo apt upgrade` | Actualiza los paquetes instalados. |  
+# | `sudo apt update` | Actualiza la lista de paquetes disponibles. |  
+# | `sudo apt upgrade` | Actualiza los paquetes instalados. |  
 | `sudo apt full-upgrade` | Actualiza paquetes, incluso si requieren eliminar otros. |  
 | `sudo apt install <paquete>` | Instala un paquete. |  
 | `sudo apt remove <paquete>` | Elimina un paquete (pero no sus configuraciones). |  
