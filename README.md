@@ -1,4 +1,4 @@
-📜 Ubuntu Server
+📜 Comandos Básicos de Ubuntu Server
 🔄 Gestión de Paquetes (APT)
 Comando	Descripción
 sudo apt update	Actualiza la lista de paquetes disponibles.
