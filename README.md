@@ -18,7 +18,8 @@
 ## 🖥 **Gestión del Sistema**
 | Comando | Descripción |
 |---------|-------------|
-| `sudo reboot` | Reinicia el sistema. |  
+# | `sensors` | sudo apt install lm-sensors |  
+# | `sudo reboot` | Reinicia el sistema. |  
 | `sudo shutdown -h now` | Apaga el sistema. |  
 | `sudo systemctl start <servicio>` | Inicia un servicio. |  
 | `sudo systemctl stop <servicio>` | Detiene un servicio. |  
