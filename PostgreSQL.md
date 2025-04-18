@@ -35,8 +35,6 @@ PostgreSQL es un sistema de base de datos relacional (RDBMS) de código abierto 
 
 ---
 
-## 🧾 SQL básico (80% del uso diario)
-
 ### Ver datos
 
 ```sql
