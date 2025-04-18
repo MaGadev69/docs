@@ -128,7 +128,6 @@ VALUES ('Coca Cola', 500, 1);
 
 ---
 
-## 📚 Conceptos para más adelante
 
 - **Índices**: Mejoran la velocidad de búsqueda.
 - **Vistas** (`VIEW`): Como consultas guardadas, útiles para simplificar reportes.
@@ -137,7 +136,3 @@ VALUES ('Coca Cola', 500, 1);
 - **Backup y restauración**: Importante para la seguridad de los datos.
 
 ---
-
-## 💡 Recomendación
-
-Empieza con lo básico, pero intenta **crear relaciones entre tus tablas** desde el principio. Eso te va a ayudar a evitar problemas más adelante cuando quieras escalar tu sistema o hacer consultas más complejas.
