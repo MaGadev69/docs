@@ -12,8 +12,6 @@
 - [Crear tablas](#-crear-tablas)
 - [Relaciones entre tablas](#-relaciones-entre-tablas-claves-foráneas)
 - [Herramientas recomendadas](#-herramientas-recomendadas)
-- [Conceptos para más adelante](#-conceptos-para-más-adelante)
-- [Recomendación](#-recomendación)
 
 ---
 
@@ -136,3 +134,89 @@ VALUES ('Coca Cola', 500, 1);
 - **Backup y restauración**: Importante para la seguridad de los datos.
 
 ---
+## Comandos 
+
+## 📦 Manejo de base de datos
+
+```bash
+# Conectarse a una base
+psql -U usuario -d nombre_db
+
+# Listar bases de datos
+\l
+
+# Crear base de datos
+CREATE DATABASE nombre_db;
+
+# Borrar base de datos
+DROP DATABASE nombre_db;
+```
+
+## 🗃️ Manejo de tablas
+
+```sql
+-- Ver tablas en la base actual
+\dt
+
+-- Crear tabla
+CREATE TABLE productos (
+  id SERIAL PRIMARY KEY,
+  nombre TEXT,
+  precio NUMERIC,
+  stock INTEGER
+);
+
+-- Borrar tabla
+DROP TABLE productos;
+
+-- Ver estructura de tabla
+\d productos
+
+-- Agregar columna a una tabla
+ALTER TABLE productos ADD COLUMN descripcion TEXT;
+```
+
+## 🔍 Consultas rápidas
+
+```sql
+-- Ver las primeras 10 filas
+SELECT * FROM productos LIMIT 10;
+
+-- Contar filas
+SELECT COUNT(*) FROM productos;
+
+-- Buscar por condición
+SELECT * FROM productos WHERE stock < 10;
+```
+
+## 🔧 Admin y rendimiento
+
+```sql
+-- Ver procesos activos
+SELECT * FROM pg_stat_activity;
+
+-- Cancelar proceso (con PID)
+SELECT pg_cancel_backend(PID);
+
+-- Ver uso de índices
+SELECT * FROM pg_stat_user_indexes;
+
+-- Forzar VACUUM y ANALYZE
+VACUUM ANALYZE;
+```
+
+## 📋 Otros súper útiles
+
+```sql
+-- Listar funciones
+\df
+
+-- Listar secuencias
+\ds
+
+-- Ver usuarios y roles
+\du
+
+-- Cambiar contraseña de un usuario
+ALTER USER nombre_usuario WITH PASSWORD 'nueva_clave';
+```
