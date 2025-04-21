@@ -97,7 +97,11 @@ DROP DATABASE nombre_db;      -- Eliminar base
 CREATE TABLE ...                          -- Crear tabla
 DROP TABLE productos;                     -- Eliminar tabla
 \d productos                             -- Ver estructura
-ALTER TABLE productos ADD COLUMN descripcion TEXT;  -- Agregar columna
+ALTER TABLE remitos                       -- Agregar multiples columnas
+ADD COLUMN estado_destino VARCHAR(20),
+ADD COLUMN fecha_confirmacion TIMESTAMP, 
+ADD COLUMN id_usuario_recepcion INT;
+
 ```
 
 ### 🔍 Consultas rápidas
