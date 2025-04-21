@@ -12,6 +12,7 @@
 - [Crear tablas](#-crear-tablas)
 - [Relaciones entre tablas](#-relaciones-entre-tablas-claves-foráneas)
 - [Herramientas recomendadas](#-herramientas-recomendadas)
+- [Comandos útiles](#comandos-útiles)
 
 ---
 
@@ -33,27 +34,19 @@ PostgreSQL es un sistema de base de datos relacional (RDBMS) de código abierto 
 
 ---
 
-### Ver datos
+## 💾 SQL básico (80% del uso diario)
 
 ```sql
+-- Ver datos
 SELECT * FROM productos;
-```
 
-### Insertar datos
-
-```sql
+-- Insertar datos
 INSERT INTO productos (nombre, precio) VALUES ('Coca Cola', 500);
-```
 
-### Actualizar datos
-
-```sql
+-- Actualizar datos
 UPDATE productos SET precio = 600 WHERE id = 1;
-```
 
-### Eliminar datos
-
-```sql
+-- Eliminar datos
 DELETE FROM productos WHERE id = 1;
 ```
 
@@ -67,16 +60,13 @@ CREATE TABLE productos (
   nombre TEXT NOT NULL,
   precio INTEGER
 );
-```
 
-```sql
 CREATE TABLE categorias (
   id SERIAL PRIMARY KEY,
   nombre TEXT
 );
-```
 
-```sql
+-- Relación con clave foránea
 CREATE TABLE productos (
   id SERIAL PRIMARY KEY,
   nombre TEXT,
@@ -87,24 +77,6 @@ CREATE TABLE productos (
 ---
 
 ## 🔗 Relaciones entre tablas (Claves foráneas)
-
-Una **clave foránea** (foreign key) crea una relación entre dos tablas. Esto permite, por ejemplo, que un producto pertenezca a una categoría específica.
-
-```sql
-CREATE TABLE categorias (
-  id SERIAL PRIMARY KEY,
-  nombre TEXT
-);
-
-CREATE TABLE productos (
-  id SERIAL PRIMARY KEY,
-  nombre TEXT,
-  precio INTEGER,
-  categoria_id INTEGER REFERENCES categorias(id)
-);
-```
-
-### Ejemplo de uso
 
 ```sql
 INSERT INTO categorias (nombre) VALUES ('Bebidas');
@@ -120,103 +92,55 @@ VALUES ('Coca Cola', 500, 1);
 | Herramienta     | Uso principal |
 |-----------------|---------------|
 | **pgAdmin 4**   | Interfaz gráfica para gestionar bases de datos PostgreSQL. |
-| **DBeaver**     | Cliente universal para bases de datos (PostgreSQL, MySQL, etc.). |
-| **TablePlus**   | UI liviana y moderna para manipular bases de datos. |
-| **psql**        | Línea de comandos oficial de PostgreSQL. Ideal para administración avanzada. |
+| **DBeaver**     | Cliente universal para bases de datos. |
+| **TablePlus**   | UI moderna para múltiples SGBD. |
+| **psql**        | Línea de comandos oficial. |
 
 ---
 
+## 🧰 Comandos útiles
 
-- **Índices**: Mejoran la velocidad de búsqueda.
-- **Vistas** (`VIEW`): Como consultas guardadas, útiles para simplificar reportes.
-- **Funciones y triggers**: Automatización dentro de la base de datos.
-- **Transacciones**: Para que varios cambios se hagan todos juntos o ninguno.
-- **Backup y restauración**: Importante para la seguridad de los datos.
-
----
-## Comandos 
-
-## 📦 Manejo de base de datos
+### 📦 Manejo de base de datos
 
 ```bash
-# Conectarse a una base
-psql -U usuario -d nombre_db
-
-# Listar bases de datos
-\l
-
-# Crear base de datos
-CREATE DATABASE nombre_db;
-
-# Borrar base de datos
-DROP DATABASE nombre_db;
+psql -U usuario -d nombre_db  -- Conectarse a una base
+\l                           -- Listar bases de datos
+CREATE DATABASE nombre_db;    -- Crear base
+DROP DATABASE nombre_db;      -- Eliminar base
 ```
 
-## 🗃️ Manejo de tablas
+### 🗃️ Tablas
 
 ```sql
--- Ver tablas en la base actual
-\dt
-
--- Crear tabla
-CREATE TABLE productos (
-  id SERIAL PRIMARY KEY,
-  nombre TEXT,
-  precio NUMERIC,
-  stock INTEGER
-);
-
--- Borrar tabla
-DROP TABLE productos;
-
--- Ver estructura de tabla
-\d productos
-
--- Agregar columna a una tabla
-ALTER TABLE productos ADD COLUMN descripcion TEXT;
+\dt                                      -- Ver tablas
+CREATE TABLE ...                          -- Crear tabla
+DROP TABLE productos;                     -- Eliminar tabla
+\d productos                             -- Ver estructura
+ALTER TABLE productos ADD COLUMN descripcion TEXT;  -- Agregar columna
 ```
 
-## 🔍 Consultas rápidas
+### 🔍 Consultas rápidas
 
 ```sql
--- Ver las primeras 10 filas
 SELECT * FROM productos LIMIT 10;
-
--- Contar filas
 SELECT COUNT(*) FROM productos;
-
--- Buscar por condición
 SELECT * FROM productos WHERE stock < 10;
 ```
 
-## 🔧 Admin y rendimiento
+### 🔧 Administración
 
 ```sql
--- Ver procesos activos
-SELECT * FROM pg_stat_activity;
-
--- Cancelar proceso (con PID)
-SELECT pg_cancel_backend(PID);
-
--- Ver uso de índices
-SELECT * FROM pg_stat_user_indexes;
-
--- Forzar VACUUM y ANALYZE
-VACUUM ANALYZE;
+SELECT * FROM pg_stat_activity;      -- Ver procesos activos
+SELECT pg_cancel_backend(PID);      -- Cancelar proceso
+SELECT * FROM pg_stat_user_indexes; -- Uso de índices
+VACUUM ANALYZE;                      -- Limpieza + estadísticas
 ```
 
-## 📋 Otros súper útiles
+### 📋 Otros
 
 ```sql
--- Listar funciones
-\df
-
--- Listar secuencias
-\ds
-
--- Ver usuarios y roles
-\du
-
--- Cambiar contraseña de un usuario
-ALTER USER nombre_usuario WITH PASSWORD 'nueva_clave';
+\df                                        -- Listar funciones
+\ds                                        -- Listar secuencias
+\du                                        -- Ver roles
+ALTER USER usuario WITH PASSWORD 'clave';  -- Cambiar contraseña
 ```
