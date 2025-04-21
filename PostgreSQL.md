@@ -6,19 +6,12 @@
 
 ## 📋 Tabla de contenidos
 
-- [¿Qué es PostgreSQL?](#-qué-es-postgresql)
 - [Estructura básica](#-estructura-básica)
 - [SQL básico](#-sql-básico-80-del-uso-diario)
 - [Crear tablas](#-crear-tablas)
 - [Relaciones entre tablas](#-relaciones-entre-tablas-claves-foráneas)
 - [Herramientas recomendadas](#-herramientas-recomendadas)
 - [Comandos útiles](#comandos-útiles)
-
----
-
-## 🧠 ¿Qué es PostgreSQL?
-
-PostgreSQL es un sistema de base de datos relacional (RDBMS) de código abierto que usa SQL para gestionar datos. Es confiable, robusto y ampliamente usado en proyectos desde pequeños hasta empresariales.
 
 ---
 
