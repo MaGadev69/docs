@@ -70,7 +70,7 @@ CREATE TABLE productos (
 
 ## 🔗 Relaciones entre tablas (Claves foráneas)
 
-```sql
+```
 INSERT INTO categorias (nombre) VALUES ('Bebidas');
 
 INSERT INTO productos (nombre, precio, categoria_id) 
@@ -98,9 +98,9 @@ CREATE TABLE ...                          -- Crear tabla
 DROP TABLE productos;                     -- Eliminar tabla
 \d productos                             -- Ver estructura
 ALTER TABLE remitos                       -- Agregar multiples columnas
-ADD COLUMN estado_destino VARCHAR(20),
+ADD COLUMN estado_destino VARCHAR(20) default 'pendiente',
 ADD COLUMN fecha_confirmacion TIMESTAMP, 
-ADD COLUMN id_usuario_recepcion INT;
+ADD COLUMN id_usuario_recepcion INT DEFAULT;
 
 ```
 
