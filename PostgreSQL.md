@@ -10,7 +10,6 @@
 - [SQL básico](#-sql-básico-80-del-uso-diario)
 - [Crear tablas](#-crear-tablas)
 - [Relaciones entre tablas](#-relaciones-entre-tablas-claves-foráneas)
-- [Herramientas recomendadas](#-herramientas-recomendadas)
 - [Comandos útiles](#comandos-útiles)
 
 ---
@@ -77,17 +76,6 @@ INSERT INTO categorias (nombre) VALUES ('Bebidas');
 INSERT INTO productos (nombre, precio, categoria_id) 
 VALUES ('Coca Cola', 500, 1);
 ```
-
----
-
-## 🛠 Herramientas recomendadas
-
-| Herramienta     | Uso principal |
-|-----------------|---------------|
-| **pgAdmin 4**   | Interfaz gráfica para gestionar bases de datos PostgreSQL. |
-| **DBeaver**     | Cliente universal para bases de datos. |
-| **TablePlus**   | UI moderna para múltiples SGBD. |
-| **psql**        | Línea de comandos oficial. |
 
 ---
 
