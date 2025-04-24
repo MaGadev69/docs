@@ -1,3 +1,9 @@
-Entornos virtuales
-# python -m venv venv
-# venv/Scripts/activate
+# 📜 Miscelanius
+
+## 🔄 **Virtual enviroment**
+| Comando | Descripción |
+|---------|-------------|
+# | `python -m venv venv` | 
+# | `venv/Scripts/activate` |  
+
+---
