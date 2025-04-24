@@ -62,7 +62,11 @@ CREATE TABLE categorias (
 CREATE TABLE productos (
   id SERIAL PRIMARY KEY,
   nombre TEXT,
+  categoria_id INTEGER,
   categoria_id INTEGER REFERENCES categorias(id)
+  o
+  CONSTRAINT fk_referencia FOREIGN KEY (campo_1) REFERENCES usuarios(campo_1),
+
 );
 ```
 
