@@ -11,8 +11,9 @@
 # | `pip install reflex` |
 # | `reflex init` |
 # | `reflex run` |
+# | `reflex run --loglevel debug` |
 
-# EStructura inicial
+# Estructura inicial
 
 example-big-app/
 ├─ assets/
