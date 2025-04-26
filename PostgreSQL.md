@@ -6,28 +6,9 @@
 
 ## 📋 Tabla de contenidos
 
-- [SQL básico](#-sql-básico-80-del-uso-diario)
 - [Crear tablas](#-crear-tablas)
 - [Relaciones entre tablas](#-relaciones-entre-tablas-claves-foráneas)
 - [Comandos útiles](#comandos-útiles)
-
----
-
-## 💾 SQL básico (80% del uso diario)
-
-```sql
--- Ver datos
-# SELECT * FROM productos;
-
--- Insertar datos
-INSERT INTO productos (nombre, precio) VALUES ('Coca Cola', 500);
-
--- Actualizar datos
-UPDATE productos SET precio = 600 WHERE id = 1;
-
--- Eliminar datos
-DELETE FROM productos WHERE id = 1;
-```
 
 ---
 
