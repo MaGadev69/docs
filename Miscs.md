@@ -13,8 +13,9 @@
 # | `reflex run` |
 # | `reflex run --loglevel debug` |
 
-# Estructura inicial
-``
+### 🔍 TREE Estructura inicial
+
+```sql
 example-big-app/
 ├─ assets/
 ├─ example_big_app/
@@ -35,4 +36,7 @@ example-big-app/
 ├─ uploaded_files/
 ├─ requirements.txt
 ├─ rxconfig.py
-``
+```
+
+
+
