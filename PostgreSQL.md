@@ -45,16 +45,16 @@ CREATE TABLE categorias (
   nombre TEXT
 );
 
--- Relación con clave foránea
-CREATE TABLE productos (
-  id SERIAL PRIMARY KEY,
-  nombre TEXT,
-  categoria_id INTEGER,
-  categoria_id INTEGER REFERENCES categorias(id)
-  o
-  CONSTRAINT fk_referencia FOREIGN KEY (campo_1) REFERENCES usuarios(campo_1),
-
+-- CREACION con clave foránea
+CREATE TABLE pedidos (
+    id_pedido SERIAL PRIMARY KEY,
+    id_sucursal_origen INTEGER NOT NULL,  -- quien hace el pedido
+    fecha_pedido TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    estado VARCHAR(30) NOT NULL DEFAULT 'pendiente',  -- 'pendiente', 'aprobado', 'rechazado', 'enviado', 'completo'
+    observaciones TEXT,
+    CONSTRAINT fk_sucursal_origen FOREIGN KEY (id_sucursal_origen) REFERENCES sucursales(id_sucursal)
 );
+
 ```
 
 ---
