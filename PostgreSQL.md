@@ -7,7 +7,6 @@
 ## 📋 Tabla de contenidos
 
 - [Crear tablas](#-crear-tablas)
-- [Relaciones entre tablas](#-relaciones-entre-tablas-claves-foráneas)
 - [Comandos útiles](#comandos-útiles)
 
 ---
@@ -39,18 +38,6 @@ CREATE TABLE pedidos (
 ```
 
 ---
-
-## 🔗 Relaciones entre tablas (Claves foráneas)
-
-```
-INSERT INTO categorias (nombre) VALUES ('Bebidas');
-
-INSERT INTO productos (nombre, precio, categoria_id) 
-VALUES ('Coca Cola', 500, 1);
-```
-
----
-
 ## 🧰 Comandos útiles
 
 ### 📦 Manejo de base de datos
