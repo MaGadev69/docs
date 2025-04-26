@@ -80,11 +80,8 @@ SELECT * FROM pg_stat_user_indexes; -- Uso de índices
 VACUUM ANALYZE;                      -- Limpieza + estadísticas
 ```
 
-### 📋 Otros
+### 📋 Miscs
 
 ```sql
-\df                                        -- Listar funciones
-\ds                                        -- Listar secuencias
-\du                                        -- Ver roles
-ALTER USER usuario WITH PASSWORD 'clave';  -- Cambiar contraseña
+
 ```
