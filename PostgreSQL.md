@@ -6,7 +6,6 @@
 
 ## 📋 Tabla de contenidos
 
-- [Estructura básica](#-estructura-básica)
 - [SQL básico](#-sql-básico-80-del-uso-diario)
 - [Crear tablas](#-crear-tablas)
 - [Relaciones entre tablas](#-relaciones-entre-tablas-claves-foráneas)
@@ -14,23 +13,11 @@
 
 ---
 
-## 🧱 Estructura básica
-
-| Concepto        | Descripción |
-|----------------|-------------|
-| **Base de datos** | Conjunto de datos relacionados. Ejemplo: `stock` |
-| **Tabla**         | Como una hoja de cálculo: filas y columnas. |
-| **Fila (row)**    | Un registro. Ej: un producto. |
-| **Columna**       | Un campo. Ej: nombre, precio. |
-| **Tipo de dato**  | El tipo del valor: `INTEGER`, `TEXT`, `DATE`, `BOOLEAN`, etc. |
-
----
-
 ## 💾 SQL básico (80% del uso diario)
 
 ```sql
 -- Ver datos
-SELECT * FROM productos;
+# SELECT * FROM productos;
 
 -- Insertar datos
 INSERT INTO productos (nombre, precio) VALUES ('Coca Cola', 500);
