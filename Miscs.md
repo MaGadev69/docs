@@ -38,5 +38,15 @@ example-big-app/
 ├─ rxconfig.py
 ```
 
+```mermaid
+erDiagram
+    usuarios ||--o{ sucursales : "trabaja_en"
+    productos }o--|| proveedores : "suministrado_por"
+    pedidos }o--|| sucursales : "generado_por"
+    pedidos ||--o{ pedido_detalle : "contiene"
+    remitos ||--o{ remitosproductos : "incluye"
+    stock_sucursales }|--|| productos : "inventario_de"
+    stock_sucursales }|--|| sucursales : "ubicado_en"
+```
 
 
