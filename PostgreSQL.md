@@ -43,8 +43,6 @@ CREATE TABLE pedidos (
 ### 📦 Manejo de base de datos
 
 ```bash
-psql -U usuario -d nombre_db  -- Conectarse a una base
-\l                           -- Listar bases de datos
 CREATE DATABASE nombre_db;    -- Crear base
 DROP DATABASE nombre_db;      -- Eliminar base
 ```
