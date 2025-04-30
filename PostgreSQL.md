@@ -38,7 +38,16 @@ CREATE TABLE pedidos (
 ```
 
 ---
-## 🧰 Comandos útiles
+## 🧰 Agregar registros
+```bash
+INSERT INTO productos (nombre, descripcion, precio, id_proveedor, stock, imagen, categoria, estado)
+VALUES 
+  ('Teclado mecánico', 'Teclado RGB con switches azules', 15000.50, 1, 10,'sin_imagen', 'informatica', 'activo'),
+  ('Mouse gamer', 'Mouse óptico con 7 botones programables', 8900.00, 2, 15,'sin_imagen', 'informatica', 'activo'),
+  ('Monitor 24"', 'Monitor Full HD con entrada HDMI', 54000.00, 1, 5,'sin_imagen', 'informatica', 'activo'),
+  ('Notebook 15"', 'Notebook con 8GB RAM y 512GB SSD', 320000.00, 3, 7,'sin_imagen', 'informatica', 'activo'),
+  ('Hub USB 4 puertos', 'Hub USB 3.0 de alta velocidad', 2500.00, 2, 25,'sin_imagen', 'informatica', 'activo');
+```
 
 ### 📦 Manejo de base de datos
 
