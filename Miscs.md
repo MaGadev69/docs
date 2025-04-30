@@ -11,8 +11,9 @@
 # | `pip install reflex` |
 # | `reflex init` |
 # | `reflex run` |
+# | `reflex run` |
 # | `reflex run --loglevel debug` |
-
+# | `reflex run --frontend-only` |
 ### 🔍 TREE Estructura inicial
 
 ```sql
