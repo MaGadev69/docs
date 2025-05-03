@@ -14,7 +14,6 @@
 # | `reflex run --loglevel debug` |
 # | `reflex run --frontend-only` |
 # | `reflex run --backend-port 9000` |
-### 🔍 TREE Estructura inicial
 
 ---
 ## Notas sobre el backend de Reflex
