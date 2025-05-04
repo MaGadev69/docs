@@ -90,5 +90,18 @@ VACUUM ANALYZE;                      -- Limpieza + estadísticas
 ### 📋 Miscs
 
 ```sql
+Agregar una nueva bd en NEON:
+1 - Se crea el proyecto en vercel.
+2 - Se crea BD en DBeaver
+jdbc:postgresql://ep-ancient-sound-a4nd5c1l-pooler.us-east-1.aws.neon.tech:5432/neondb?sslmode=require
+user: neondb_owner
+pass:
+SSL: Use SSL
+3 -  Backup DBeaver:
+  Clic derecho en tu base local → Tools > Backup
+  En Format, elegí SQL PLANO
+4 - Sobre la BD creada, click derecho  -> Tools -> Ejecutar script.
+  Subir el Dump
+
 
 ```
