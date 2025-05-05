@@ -1,11 +1,7 @@
-# Despliegue del Backend en Railway con Base de Datos en Neon
+# Despliegue del backend en Railway con BD PostgreSQL en Neon
 
 En local (Docker Dell): se construye la URL a partir de tus variables .env.
 En producción (Railway): toma DATABASE_URL directamente desde las variables de entorno.
-
-# Despliegue del Backend en Railway con Base de Datos en Neon
-
-Este documento resume el proceso seguido para desplegar un backend FastAPI en Railway y conectarlo a una base de datos PostgreSQL alojada en Neon.
 
 ---
 
