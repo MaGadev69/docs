@@ -13,7 +13,7 @@ Asegúrate de que el archivo rxconfig.py tiene correctamente seteado el campo ap
 import reflex as rx
 config = rx.Config(
     app_name="tu_app",
-    api_url="https://tubackend.com:8000",
+    api_url="https://tubackend.com",
 )
 ```
 ## 📦 3 - Sube el build a Railway
