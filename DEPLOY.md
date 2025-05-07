@@ -111,6 +111,7 @@ https://appstockbackend-production.up.railway.app/productos/
 
 ---
 
+
 ## ✅ Resultado
 
 El backend está corriendo en Railway y conectado exitosamente a la base de datos PostgreSQL en Neon. Se puede acceder desde cualquier navegador o cliente HTTP.
