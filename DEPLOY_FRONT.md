@@ -16,10 +16,26 @@ config = rx.Config(
     api_url="https://tubackend.com",
 )
 ```
-## 📦 3 - Sube el build a Railway
-En Railway, crea un nuevo proyecto tipo "Static Site" y sube los archivos dentro de .web/_static/ o descomprime el frontend.zip y sube su contenido como los archivos estáticos del frontend.
-## 📦 4 - Archivos de configuración relevantes
-El archivo principal es rxconfig.py, donde defines app_name y api_url32.
-Railway puede pedirte un archivo railway.json para configuraciones avanzadas, pero lo básico es que subas los archivos estáticos generados.
-## 📦 5 - Verifica conexión entre frontend y backend
-El campo api_url en rxconfig.py debe apuntar al backend y estar accesible desde el dominio del frontend. Si el backend está en Railway o en otro proveedor, asegúrate de que el CORS y los puertos estén bien configurados12.
+## 📦  - Rebuild
+```bash
+pip install reflex --upgrade
+pip freeze > requirements.txt
+reflex init
+```
+## 📦  - Exporta tu frontend:
+```bash
+API_URL=https://appstockbackend-production.up.railway.app reflex export --frontend-only
+
+```
+## 📦  - 
+```bash
+```
+
+## Git
+```bash
+git status
+git add .
+git commit -m "Agrego estáticos del frontend"
+git push
+```
+## * * En railway, se debe setear el puerto 80 del dominio
