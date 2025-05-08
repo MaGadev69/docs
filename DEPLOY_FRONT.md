@@ -33,6 +33,9 @@ API_URL=https://appstockbackend-production.up.railway.app reflex export --fronte
 
 ## Git
 ```bash
+git branch -M main
+git push -u origin main
+
 git status
 git add .
 git commit -m "Agrego estáticos del frontend"
