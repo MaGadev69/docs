@@ -4,6 +4,8 @@
 Ejecuta este comando para exportar el frontend:
 ```bash
 reflex export --frontend-only
+reflex export
+
 Esto generará una carpeta frontend.zip o el contenido estático en .web/_static/ si usas la opción --no-zip1.
 ```
 
@@ -40,6 +42,8 @@ git push -u origin main
 git remote -v
 - camnbio de repo
 git remote add origin https://github.com/MaGadev69/vercel_test.git
+- primer commit
+git push -u origin main) se usa solo la primera vez
 
 git status
 git add .
