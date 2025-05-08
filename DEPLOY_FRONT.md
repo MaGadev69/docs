@@ -36,6 +36,11 @@ API_URL=https://appstockbackend-production.up.railway.app reflex export --fronte
 git branch -M main
 git push -u origin main
 
+- ver repo actual
+git remote -v
+- camnbio de repo
+git remote add origin https://github.com/MaGadev69/vercel_test.git
+
 git status
 git add .
 git commit -m "Agrego estáticos del frontend"
