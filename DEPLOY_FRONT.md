@@ -49,5 +49,6 @@ git status
 git add .
 git commit -m "Agrego estáticos del frontend"
 git push
+
 ```
 ## * * En railway, se debe setear el puerto 80 del dominio
