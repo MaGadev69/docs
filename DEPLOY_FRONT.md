@@ -51,4 +51,5 @@ git commit -m "Agrego estáticos del frontend"
 git push
 
 ```
-## * * En railway, se debe setear el puerto 80 del dominio
+## * * En railway  
+https://github.com/Seikened/template_reflex_on_rialway
