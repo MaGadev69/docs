@@ -1,5 +1,5 @@
 # 📚 Arquitectura modular por capas - estructura basada en responsabilidades
-Cada archivo y carpeta tiene una función clara dentro del sistema. En lugar de mezclar todo en un solo archivo (como en prototipos), se separan las "responsabilidades" del backend:
+Cada archivo y carpeta tiene una función clara dentro del sistema. Se separan las "responsabilidades" del backend:
 
 config.py → configuración
 
