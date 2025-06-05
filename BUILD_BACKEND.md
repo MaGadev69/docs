@@ -16,20 +16,35 @@ schemas.py → validaciones de entrada/salida
 crud.py (opcional) → lógica de base de datos
 
 project_root/
+
 ├── app/
+
 │   ├── __init__.py
+
 │   ├── main.py     # Punto de entrada FastAPI
+
 │   ├── models.py   # Tablas: User, Branch, Document, etc.
+
 │   ├── schemas.py
+
 │   ├── database.py # Engine + sesión SQLAlchemy
+
 │   ├── routes/     # Endpoints para usuarios
+
 │   │   └── users.py
+
 │   │   └── documents.py
+
 │   │   └──  . . .
+
 │   ├── security.py # Autenticación JWT y control de roles
+
 │   ├── logs.py
+
 │   └── config.py
+
 ├── requirements.txt # Paquetes del proyecto
+
 └── .env # Variables secretas: DB, JWT
 
 
