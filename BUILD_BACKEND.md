@@ -15,7 +15,7 @@ schemas.py → validaciones de entrada/salida
 
 crud.py (opcional) → lógica de base de datos
 
-project_root/
+## Project_root/
 
 ├── app/
 
