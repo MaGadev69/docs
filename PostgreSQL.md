@@ -37,6 +37,13 @@ CREATE TABLE pedidos (
 
 ```
 
+## 🏗 Modificar tablas
+
+```sql
+Modifica nombre de tabla
+ALTER TABLE nombre_actual RENAME TO nuevo_nombre;
+```
+
 ---
 ## 🧰 Agregar registros
 ```bash
