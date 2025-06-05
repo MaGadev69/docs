@@ -42,6 +42,9 @@ CREATE TABLE pedidos (
 ```sql
 Modifica nombre de tabla
 ALTER TABLE nombre_actual RENAME TO nuevo_nombre;
+
+Modifica nombre de campo
+ALTER TABLE clientes RENAME COLUMN nombre_cliente TO nombre_completo;
 ```
 
 ---
