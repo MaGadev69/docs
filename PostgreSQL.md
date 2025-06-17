@@ -2,6 +2,16 @@
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Relational_DB-blue)](https://www.postgresql.org/)
 
 ---
+## 📦 Del dia a dia
+```sql
+DEFERRABLE INITIALLY DEFERRED
+La verificación de la clave foránea se pospone hasta el final de la transacción, no se verifica de inmediato.
+🔍 ¿Cuándo lo necesitás?
+Cuando insertás registros relacionados en orden invertido dentro de una misma transacción.
+Por ejemplo: insertás un hijo antes que el padre (poco común, pero válido en algunos casos).
+```
+
+
 
 ## 📦 Manejo de Base de Datos
 ```sql
