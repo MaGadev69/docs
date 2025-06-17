@@ -1,8 +1,11 @@
-🐘 PostgreSQL - Comandos Básicos
-Mostrar imagen
+# 🐘 PostgreSQL - Comandos Básicos
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Relational_DB-blue)](https://www.postgresql.org/)
 
-📦 Manejo de Base de Datos
-sql-- Crear base de datos
+---
+
+## 📦 Manejo de Base de Datos
+```sql
+-- Crear base de datos
 CREATE DATABASE nombre_db;
 
 -- Eliminar base de datos
@@ -13,10 +16,15 @@ DROP DATABASE nombre_db;
 
 -- Listar todas las bases de datos
 \l
+```
 
-🗃️ Gestión de Tablas
-Ver información de tablas
-sql-- Ver todas las tablas
+---
+
+## 🗃️ Gestión de Tablas
+
+### Ver información de tablas
+```sql
+-- Ver todas las tablas
 \dt
 
 -- Ver estructura de una tabla específica
@@ -24,8 +32,11 @@ sql-- Ver todas las tablas
 
 -- Ver tablas con más detalle
 \dt+
-Crear tablas
-sql-- Tabla básica
+```
+
+### Crear tablas
+```sql
+-- Tabla básica
 CREATE TABLE productos (
     id SERIAL PRIMARY KEY,
     nombre TEXT NOT NULL,
@@ -44,8 +55,11 @@ CREATE TABLE pedidos (
         FOREIGN KEY (id_sucursal_origen) 
         REFERENCES sucursales(id_sucursal)
 );
-Modificar tablas
-sql-- Cambiar nombre de tabla
+```
+
+### Modificar tablas
+```sql
+-- Cambiar nombre de tabla
 ALTER TABLE nombre_actual RENAME TO nuevo_nombre;
 
 -- Cambiar nombre de columna
@@ -65,16 +79,24 @@ ALTER TABLE productos DROP COLUMN categoria;
 
 -- Modificar tipo de dato
 ALTER TABLE productos ALTER COLUMN precio TYPE DECIMAL(12,2);
-Eliminar tablas
-sql-- Eliminar tabla
+```
+
+### Eliminar tablas
+```sql
+-- Eliminar tabla
 DROP TABLE productos;
 
 -- Eliminar tabla si existe
 DROP TABLE IF EXISTS productos;
+```
 
-🧰 Manipulación de Datos
-Insertar registros
-sql-- Insertar un registro
+---
+
+## 🧰 Manipulación de Datos
+
+### Insertar registros
+```sql
+-- Insertar un registro
 INSERT INTO productos (nombre, precio, stock) 
 VALUES ('Teclado mecánico', 15000.50, 10);
 
@@ -84,16 +106,22 @@ VALUES
     ('Teclado mecánico', 'Teclado RGB con switches azules', 15000.50, 1, 10, 'informatica', 'activo'),
     ('Mouse gamer', 'Mouse óptico con 7 botones programables', 8900.00, 2, 15, 'informatica', 'activo'),
     ('Monitor 24"', 'Monitor Full HD con entrada HDMI', 54000.00, 1, 5, 'informatica', 'activo');
-Actualizar registros
-sql-- Actualizar un campo
+```
+
+### Actualizar registros
+```sql
+-- Actualizar un campo
 UPDATE productos SET precio = 16000.00 WHERE id = 1;
 
 -- Actualizar múltiples campos
 UPDATE productos 
 SET precio = 16000.00, stock = 15 
 WHERE nombre = 'Teclado mecánico';
-Eliminar registros
-sql-- Eliminar registros específicos
+```
+
+### Eliminar registros
+```sql
+-- Eliminar registros específicos
 DELETE FROM productos WHERE stock = 0;
 
 -- Eliminar todos los registros (mantiene la estructura)
@@ -101,10 +129,15 @@ DELETE FROM productos;
 
 -- Vaciar tabla completamente
 TRUNCATE TABLE productos;
+```
 
-🔍 Consultas Básicas
-Consultas simples
-sql-- Seleccionar todo
+---
+
+## 🔍 Consultas Básicas
+
+### Consultas simples
+```sql
+-- Seleccionar todo
 SELECT * FROM productos;
 
 -- Limitar resultados
@@ -121,8 +154,11 @@ SELECT * FROM productos ORDER BY precio DESC;
 
 -- Campos específicos
 SELECT nombre, precio FROM productos WHERE categoria = 'informatica';
-Consultas con JOIN
-sql-- INNER JOIN
+```
+
+### Consultas con JOIN
+```sql
+-- INNER JOIN
 SELECT p.nombre, c.nombre as categoria
 FROM productos p
 INNER JOIN categorias c ON p.id_categoria = c.id;
@@ -131,10 +167,15 @@ INNER JOIN categorias c ON p.id_categoria = c.id;
 SELECT p.nombre, c.nombre as categoria
 FROM productos p
 LEFT JOIN categorias c ON p.id_categoria = c.id;
+```
 
-🔗 Claves Foráneas
-Ver todas las FK de la base de datos
-sqlSELECT 
+---
+
+## 🔗 Claves Foráneas
+
+### Ver todas las FK de la base de datos
+```sql
+SELECT 
     conrelid::regclass AS tabla_origen,
     conname AS constraint_name,
     confrelid::regclass AS tabla_referenciada,
@@ -142,18 +183,26 @@ sqlSELECT
 FROM pg_constraint
 WHERE contype = 'f'
 ORDER BY tabla_origen, constraint_name;
-Agregar/eliminar FK
-sql-- Agregar clave foránea
+```
+
+### Agregar/eliminar FK
+```sql
+-- Agregar clave foránea
 ALTER TABLE pedidos 
 ADD CONSTRAINT fk_cliente 
 FOREIGN KEY (id_cliente) REFERENCES clientes(id);
 
 -- Eliminar clave foránea
 ALTER TABLE pedidos DROP CONSTRAINT fk_cliente;
+```
 
-🔧 Administración y Mantenimiento
-Procesos y conexiones
-sql-- Ver procesos activos
+---
+
+## 🔧 Administración y Mantenimiento
+
+### Procesos y conexiones
+```sql
+-- Ver procesos activos
 SELECT pid, usename, datname, state, query 
 FROM pg_stat_activity 
 WHERE state = 'active';
@@ -163,8 +212,11 @@ SELECT pg_cancel_backend(PID);
 
 -- Terminar proceso
 SELECT pg_terminate_backend(PID);
-Índices y rendimiento
-sql-- Ver uso de índices
+```
+
+### Índices y rendimiento
+```sql
+-- Ver uso de índices
 SELECT * FROM pg_stat_user_indexes;
 
 -- Crear índice
@@ -178,8 +230,11 @@ VACUUM ANALYZE;
 
 -- Solo estadísticas
 ANALYZE;
-Información del sistema
-sql-- Ver tamaño de las tablas
+```
+
+### Información del sistema
+```sql
+-- Ver tamaño de las tablas
 SELECT 
     schemaname,
     tablename,
@@ -190,37 +245,43 @@ ORDER BY pg_total_relation_size(tablename::text) DESC;
 
 -- Ver versión de PostgreSQL
 SELECT version();
+```
 
-🌐 Conexión con Neon (Cloud)
-Configuración de conexión
+---
+
+## 🌐 Conexión con Neon (Cloud)
+
+### Configuración de conexión
+```
 Host: ep-ancient-sound-a4nd5c1l-pooler.us-east-1.aws.neon.tech
 Port: 5432
 Database: neondb
 User: neondb_owner
 Password: [tu_password]
 SSL Mode: require
-URL de conexión JDBC
+```
+
+### URL de conexión JDBC
+```
 jdbc:postgresql://ep-ancient-sound-a4nd5c1l-pooler.us-east-1.aws.neon.tech:5432/neondb?sslmode=require
-Proceso de migración
+```
 
-Crear proyecto en Vercel
-Crear BD en DBeaver con los datos de conexión
-Hacer backup de BD local:
+### Proceso de migración
+1. **Crear proyecto en Vercel**
+2. **Crear BD en DBeaver** con los datos de conexión
+3. **Hacer backup de BD local:**
+   - Clic derecho en BD local → Tools → Backup
+   - Format: seleccionar "SQL PLANO"
+4. **Restaurar en Neon:**
+   - Clic derecho en BD Neon → Tools → Execute Script
+   - Cargar el archivo dump generado
 
-Clic derecho en BD local → Tools → Backup
-Format: seleccionar "SQL PLANO"
+---
 
+## 📋 Comandos de Terminal (\\ comandos)
 
-Restaurar en Neon:
-
-Clic derecho en BD Neon → Tools → Execute Script
-Cargar el archivo dump generado
-
-
-
-
-📋 Comandos de Terminal (\ comandos)
-sql\l              -- Listar bases de datos
+```sql
+\l              -- Listar bases de datos
 \c database     -- Conectar a base de datos
 \dt             -- Listar tablas
 \dt+            -- Listar tablas con detalles
@@ -229,12 +290,15 @@ sql\l              -- Listar bases de datos
 \q              -- Salir
 \h              -- Ayuda con comandos SQL
 \?              -- Ayuda con comandos \
+```
 
-💡 Tips Útiles
+---
 
-Usa EXPLAIN ANALYZE antes de consultas complejas para ver el plan de ejecución
-Los índices mejoran las consultas SELECT pero ralentizan INSERT/UPDATE
-Usa SERIAL para IDs auto-incrementales
-Siempre especifica el esquema en producción: public.productos
-Para texto largo usa TEXT, para texto corto usa VARCHAR(n)
-Usa DECIMAL para dinero, no FLOAT
+## 💡 Tips Útiles
+
+- Usa `EXPLAIN ANALYZE` antes de consultas complejas para ver el plan de ejecución
+- Los índices mejoran las consultas SELECT pero ralentizan INSERT/UPDATE
+- Usa `SERIAL` para IDs auto-incrementales
+- Siempre especifica el esquema en producción: `public.productos`
+- Para texto largo usa `TEXT`, para texto corto usa `VARCHAR(n)`
+- Usa `DECIMAL` para dinero, no `FLOAT`
