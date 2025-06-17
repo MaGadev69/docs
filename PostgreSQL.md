@@ -4,10 +4,20 @@
 
 ---
 
-## 📋 Tabla de contenidos
+## Mostrar todas las FK de la BBDD
 
-- [Crear tablas](#-crear-tablas)
-- [Comandos útiles](#comandos-útiles)
+```sql
+SELECT 
+    conrelid::regclass AS tabla_origen,
+    conname AS constraint_name,
+    confrelid::regclass AS tabla_referenciada
+FROM 
+    pg_constraint
+WHERE 
+    contype = 'f'
+ORDER BY 
+    tabla_origen, constraint_name;
+```
 
 ---
 
