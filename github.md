@@ -6,3 +6,9 @@ git config --get remote.origin.url
 ```BASH
 git clone 'repo'
 ```
+## Push un solo archivo
+```BASH
+git add Dockerfile
+git commit -m "Fix pip install line"
+git push
+```
