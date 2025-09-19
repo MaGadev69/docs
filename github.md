@@ -1,10 +1,18 @@
-## Obtener solo la URL del repositorio remoto:
+## Git inicial
 ```BASH
-git config --get remote.origin.url
+git init -b main
+git remote add origin https.......
+git add .
+git commit -m "Initial commit"
+git push -u origin main
 ```
-## Clonar repo
+## Gitpush 
 ```BASH
-git clone 'repo'
+git init
+git status
+git add .
+git commit -m "messaje"
+git push
 ```
 ## Push un solo archivo
 ```BASH
