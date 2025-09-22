@@ -34,3 +34,7 @@ version con bbdd postgresql
 git checkout feature/multi-tenant-cloud
 git push --set-upstream origin feature/multi-tenant-cloud
 ```
+## 
+```BASH
+git reset --hard HEAD
+```
