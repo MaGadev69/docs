@@ -1,10 +1,12 @@
 ## Git inicial
 ```BASH
-git init -b main
-git remote add origin https.......
+git init
 git add .
 git commit -m "Initial commit"
+git branch -M main
+git remote add origin https://github.com/MaGadev69/turneo.git
 git push -u origin main
+
 ```
 ## Gitpush 
 ```BASH
